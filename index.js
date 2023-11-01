@@ -1,6 +1,3 @@
-const express = require('express'),
-    morgan = require('morgan');
-
+const express = require('express');
 const app = express();
 
-app.use(morgan('common'));
