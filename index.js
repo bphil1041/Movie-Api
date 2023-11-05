@@ -14,6 +14,8 @@ const topMovies = [
     { title: 'Moonlight', director: 'Barry Jenkins'}
 ];
 
+app.use(morgan('dev'));
+
 app.get('/movies', (req, res) => {
     res.json({ topMovies: topMovies});
 });
