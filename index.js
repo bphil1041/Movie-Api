@@ -1,4 +1,5 @@
 const express = require('express');
+const morgan = require('morgan');
 const app = express();
 
 const topMovies = [
@@ -25,6 +26,11 @@ app.get('/', (req, res) => {
 });
 
 app.use(express.static('public'));
+
+app.use((err, req, res, next) => {
+    console.error(err.stack);
+    res.status(500).send('Something broke!');
+});
 
 const PORT = 8080;
 app.listen(PORT, () => {
