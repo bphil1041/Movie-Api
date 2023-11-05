@@ -18,6 +18,10 @@ app.get('/movies', (req, res) => {
     res.json({ topMovies: topMovies});
 });
 
+app.get('/', (req, res) => {
+    res.send('Welcome to my movie database!');
+});
+
 const PORT = 8080;
 app.listen(PORT, () => {
     console.log('Server is running on port 8080');
