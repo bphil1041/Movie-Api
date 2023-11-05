@@ -22,6 +22,8 @@ app.get('/', (req, res) => {
     res.send('Welcome to my movie database!');
 });
 
+app.use(express.static('public'));
+
 const PORT = 8080;
 app.listen(PORT, () => {
     console.log('Server is running on port 8080');
