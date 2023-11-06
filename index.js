@@ -15,18 +15,23 @@ const topMovies = [
     { title: 'Moonlight', director: 'Barry Jenkins'}
 ];
 
+//Middleware to log requests
 app.use(morgan('dev'));
 
+//Endpoint to get a JSON response with topMovies data
 app.get('/movies', (req, res) => {
     res.json({ topMovies: topMovies});
 });
 
+//Default endpoint that responds with a welcome message
 app.get('/', (req, res) => {
     res.send('Welcome to my movie database!');
 });
 
+//Middleware to serve static files from "public" directory
 app.use(express.static('public'));
 
+//Error-handling middleware
 app.use((err, req, res, next) => {
     console.error(err.stack);
     res.status(500).send('Something broke!');
