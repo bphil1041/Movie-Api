@@ -1,6 +1,14 @@
 const express = require('express');
 const morgan = require('morgan');
+const bodyParser = require('body-parser');
+const uuid = require('uuid');
 const app = express();
+
+//Middleware to log requests
+app.use(morgan('dev'));
+
+//Body parser middleware to handle POST req data
+app.use(bodyParser.json());
 
 // Movies
 const topMovies = [
@@ -141,9 +149,6 @@ const topMovies = [
         },
     },
 ];
-
-//Middleware to log requests
-app.use(morgan('dev'));
 
 //Endpoint to get a JSON response with topMovies data
 app.get('/movies', (req, res) => {
