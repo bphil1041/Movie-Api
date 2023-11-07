@@ -139,6 +139,7 @@ const topMovies = [
             name: 'Barry Jenkins',
             birth: '1979'
         },
+    },
 ];
 
 //Middleware to log requests
