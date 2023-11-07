@@ -1,7 +1,6 @@
 const express = require('express');
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
-const uuid = require('uuid');
 const app = express();
 
 //Middleware to log requests
@@ -158,6 +157,24 @@ const topMovies = [
         },
     },
 ];
+
+//READ: return list of all movies
+app.get('/topmovies', (req, res) => {
+    res.status(200).json(topMovies);
+})
+
+//READ: return single movie
+app.get('/topmovies/:title', (req, res) => {
+    const { title } = req.params;
+    const movie = topMovies.find(movie => movie.title.toLowerCase() === title.toLowerCase());
+
+    if (movie) {
+        res.status(200).json(movie);
+    } else {
+        res.status(404).send('No such movie');
+    }
+});
+
 
 //Endpoint to get a JSON response with topMovies data
 app.get('/movies', (req, res) => {
