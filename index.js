@@ -10,6 +10,15 @@ app.use(morgan('dev'));
 //Body parser middleware to handle POST req data
 app.use(bodyParser.json());
 
+let users = [
+    {
+        id: 1,
+        name: 'Ben',
+        favoriteMovies: ['Mulholland Drive']
+    },
+    
+];
+
 // Movies
 const topMovies = [
     { 
