@@ -188,6 +188,20 @@ app.get('/topmovies/genre/:genreName', (req, res) => {
 });
 
 
+// READ: return director
+app.get('/topmovies/director/:name', (req, res) => {
+    const { name } = req.params;
+    const director = topMovies.find(movie => movie.director.name.toLowerCase() === name.toLowerCase());
+
+    if (director) {
+        res.status(200).json(director);
+    } else {
+        res.status(404).send('No such director.');
+    }
+});
+
+
+
 
 //Endpoint to get a JSON response with topMovies data
 app.get('/movies', (req, res) => {
