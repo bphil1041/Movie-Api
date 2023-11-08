@@ -175,6 +175,19 @@ app.get('/topmovies/:title', (req, res) => {
     }
 });
 
+// READ: return genre
+app.get('/topmovies/genre/:genreName', (req, res) => {
+    const { genreName } = req.params;
+    const moviesWithGenre = topMovies.filter(movie => movie.genre.genreName.toLowerCase() === genreName.toLowerCase());
+
+    if (moviesWithGenre.length > 0) {
+        res.status(200).json(moviesWithGenre);
+    } else {
+        res.status(404).send('No such genre or no movies found with this genre.');
+    }
+});
+
+
 
 //Endpoint to get a JSON response with topMovies data
 app.get('/movies', (req, res) => {
