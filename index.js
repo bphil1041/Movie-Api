@@ -2,6 +2,8 @@ const express = require('express');
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
 const app = express();
+const uuid = require('uuid');
+
 
 //Middleware to log requests
 app.use(morgan('dev'));
@@ -157,6 +159,19 @@ const topMovies = [
         },
     },
 ];
+
+//CREATE: add user
+app.post('/users', (req, res) => {
+    const newUser = req.body;
+
+    if (newUser.name) {
+        newUser.id = uuid.v4();
+        users.push(newUser);
+        res.status(201).json(newUser)
+    } else {
+        res.status(400).send('users need names')
+    }
+})
 
 //READ: return list of all movies
 app.get('/topmovies', (req, res) => {
