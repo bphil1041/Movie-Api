@@ -160,6 +160,7 @@ const topMovies = [
     },
 ];
 
+
 //CREATE: add user
 app.post('/users', (req, res) => {
     const newUser = req.body;
@@ -172,6 +173,22 @@ app.post('/users', (req, res) => {
         res.status(400).send('users need names')
     }
 })
+
+//UPDATE user
+app.put('/users/:id', (req, res) => {
+    const { id } = req.params;
+    const updatedUser = req.body;
+
+    let user = users.find(user => user.id === parseInt(id));
+
+    if (user) {
+        user.name = updatedUser.name;
+        res.status(200).json(user); 
+    } else {
+        res.status(404).send('No such user'); 
+    }
+});
+
 
 //READ: return list of all movies
 app.get('/topmovies', (req, res) => {
