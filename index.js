@@ -279,9 +279,6 @@ app.get('/topmovies/director/:name', (req, res) => {
     }
 });
 
-
-
-
 //Endpoint to get a JSON response with topMovies data
 app.get('/movies', (req, res) => {
     res.json({ topMovies: topMovies});
