@@ -189,6 +189,21 @@ app.put('/users/:id', (req, res) => {
     }
 });
 
+//CREATE favorite movie 
+app.post('/users/:id/:title', (req, res) => {
+    const { id, title } = req.params;
+
+    let user = users.find(user => user.id == id);
+
+    if (user) {
+        user.favoriteMovies.push(title);
+        res.status(200).send(`${title} has been added to user ${id}'s array`);
+    } else {
+        res.status(404).send('No such user');
+    }
+});
+
+
 
 //READ: return list of all movies
 app.get('/topmovies', (req, res) => {
