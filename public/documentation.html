@@ -16,6 +16,68 @@
         movies, directors, and genres. Users will be able to sign up, update their
         personal information, and create a list of their favorite movies!!
     </p>
+    <h1>Movie Endpoints</h1>
+    <table border="3">
+        <tr>
+            <th>Request</th>
+            <th>URL</th>
+            <th>Response</th>
+        </tr>
+        <tr>
+            <th>GET</th>
+            <th>/topmovies</th>
+            <th>Returns a list of all movies.</th>
+        </tr>
+        <tr>
+            <th>GET</th>
+            <th>/topmovies/:title</th>
+            <th>Returns data about a single movie.</th>
+        </tr>
+        <tr>
+            <th>GET</th>
+            <th>/topmovies/genre/:genreName</th>
+            <th>Returns data about a genre.</th>
+        </tr>
+        <tr>
+            <th>GET</th>
+            <th>/topmovies/director/:name</th>
+            <th>Returns data about a director.</th>
+        </tr>
+    </table>
+    <h1>User Endpoints</h1>
+    <table border="3">
+        <tr>
+            <th>Request</th>
+            <th>URL</th>
+            <th>Response</th>
+        </tr>
+        <tr>
+            <th>POST</th>
+            <th>/users</th>
+            <th>Adds a new user.</th>
+        </tr>
+        <tr>
+            <th>PUT</th>
+            <th>/users/:id</th>
+            <th>Updates user information.</th>
+        </tr>
+        <tr>
+            <th>POST</th>
+            <th>/users/:id/:title</th>
+            <th>Adds a favorite movie to user's list.</th>
+        </tr>
+        <tr>
+            <th>DELETE</th>
+            <th>/users/:id/:title</th>
+            <th>Removes a favorite movie from user's list.</th>
+        </tr>
+        <tr>
+            <th>DELETE</th>
+            <th>/users/:id</th>
+            <th>Deletes an existing user.</th>
+        </tr>
+
+    </table>
 </body>
 
 </html>
