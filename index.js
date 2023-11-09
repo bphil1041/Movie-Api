@@ -203,6 +203,19 @@ app.post('/users/:id/:title', (req, res) => {
     }
 });
 
+//DELETE favorite movie 
+app.delete('/users/:id/:title', (req, res) => {
+    const { id, title } = req.params;
+
+    let user = users.find(user => user.id == id);
+
+    if (user) {
+        user.favoriteMovies = user.favoriteMovies.filter( title => title !== title);
+        res.status(200).send(`${title} has been removed from user ${id}'s array`);
+    } else {
+        res.status(404).send('No such user');
+    }
+});
 
 
 //READ: return list of all movies
