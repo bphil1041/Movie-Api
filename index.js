@@ -209,7 +209,6 @@ app.post('/users/:id/:title', (req, res) => {
 });
 
 //DELETE favorite movie 
-// DELETE favorite movie 
 app.delete('/users/:id/:title', (req, res) => {
     const { id, title } = req.params;
 
