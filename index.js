@@ -17,6 +17,11 @@ let users = [
         name: 'Ben',
         favoriteMovies: ['Mulholland Drive']
     },
+    {
+        id: 2,
+        name: 'Obi-Wan',
+        favoriteMovies: ['American Gangster']
+    },
     
 ];
 
@@ -212,6 +217,20 @@ app.delete('/users/:id/:title', (req, res) => {
     if (user) {
         user.favoriteMovies = user.favoriteMovies.filter( title => title !== title);
         res.status(200).send(`${title} has been removed from user ${id}'s array`);
+    } else {
+        res.status(404).send('No such user');
+    }
+});
+
+//DELETE: allow existing user to deregister 
+app.delete('/users/:id', (req, res) => {
+    const { id } = req.params;
+
+    let user = users.find(user => user.id == id);
+
+    if (user) {
+        users = users.filter( user => user.id !== id);
+        res.status(200).send(`user ${id} has been deleted`);
     } else {
         res.status(404).send('No such user');
     }
