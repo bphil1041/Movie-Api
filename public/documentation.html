@@ -36,81 +36,145 @@
             <td>/users</td>
             <td>POST</td>
             <td>None</td>
-            <td>A JSON object holding data about the user. EXAMPLE STILL NEEDED</td>
-            <td>A JSON object holding data about the user who was added. </td>
+            <td>
+                <code>
+                    {
+                        "name": "Ben",
+                        "favoriteMovies": ["Mulholland Drive"]
+                    }
+                </code>
+            </td>
+            <td>
+                <code>
+                    {
+                        "name": "Ben",
+                        "favoriteMovies": ["Mullholland Drive"]
+                        "id": "f34e1bec-325a-45fb-ba2a-81302ea30337"
+                    }
+                </code>
+            </td>
         </tr>
         <tr>
             <td>Allow users to update their information.</td>
             <td>/users/:id</td>
             <td>PUT</td>
-            <td></td>
-            <td></td>
-            <td></td>
-
+            <td>None</td>
+            <td>
+                <code>
+                    {
+                        "name": "Ben Phillips"
+                        "favoriteMovies": []
+                    }
+                </code>
+            </td>
+            <td>
+                <code>
+                    {
+                        "id": 1,
+                        "name": "Ben Phillips",
+                        "favoriteMovies": ["Mulholland Drive"]
+                    }
+                </code>
+            </td>
         </tr>
         <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-
+            <td>Allow users to add a favorite movie.</td>
+            <td>/users/:id/:title</td>
+            <td>POST</td>
+            <td>None</td>
+            <td>
+                <pre>
+                    None in the body, title as a parameter
+                </pre>
+            </td>
+            <td>
+                <code>
+                    "Spirited Away has been added to user 1's array"
+                </code>
+            </td>
         </tr>
         <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-
+            <td>Allow users to delete a favorite movie.</td>
+            <td>/users/:id/:title</td>
+            <td>DELETE</td>
+            <td>None</td>
+            <td>
+                <pre>
+                    None in the body, title as a parameter
+                </pre>
+            </td>
+            <td>
+                <code>
+                    "Spirited Away has been removed from user 1's array"
+                </code>
+            </td>
         </tr>
         <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-
+            <td>Allow existing user to deregister.</td>
+            <td>/users/:id</td>
+            <td>DELETE</td>
+            <td>None</td>
+            <td>
+                <pre>
+                    None in the body
+                </pre>
+            </td>
+            <td>
+                <code>
+                    "user 2 has been deleted"
+                </code>
+        
+            </td>
         </tr>
         <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-
+            <td>Return a list of all movies.</td>
+            <td>/topmovies</td>
+            <td>GET</td>
+            <td>None</td>
+            <td>None</td>
+            <td>
+                <pre>
+                    Returns array of movie objects
+                </pre>
+            </td>
         </tr>
         <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-
+            <td>Return a single movie.</td>
+            <td>/topmovies/:title</td>
+            <td>GET</td>
+            <td>None</td>
+            <td>None</td>
+            <td>
+                <pre>
+                    Returns details of a single movie
+                </pre>
+            </td>
         </tr>
         <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-
+            <td>Return a genre.</td>
+            <td>/topmovies/genre/:genreName</td>
+            <td>GET</td>
+            <td>None</td>
+            <td>None</td>
+            <td>
+                <pre>
+                    Array of movie objects with the specified genre
+                </pre>
+            </td>
         </tr>
         <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-
+            <td>Return information on director.</td>
+            <td>/topmovies/director/:name</td>
+            <td>GET</td>
+            <td>None</td>
+            <td>None</td>
+            <td>
+                <pre>
+                    Returns details of a movie directed by a specific director
+                </pre>
+            </td>
         </tr>
+        
     
 
     </table>
