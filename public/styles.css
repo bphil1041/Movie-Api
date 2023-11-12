@@ -1,0 +1,36 @@
+body {
+    font-family: monospace;
+    margin: 20px;
+    background: linear-gradient(to right, #106a37, #6e0374);
+    color: white;
+ 
+}
+
+h1, h2, p {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.table th, .table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.table th {
+    background: linear-gradient(to right, #002589b1, #0fecdd85);
+}
+
+@media screen and (max-width: 600px) {
+    .table th, .table td {
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
+    }
+}
