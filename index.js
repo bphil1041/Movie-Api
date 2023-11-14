@@ -22,6 +22,12 @@ let users = [
         name: 'Obi-Wan',
         favoriteMovies: ['American Gangster']
     },
+    {
+        id: 3,
+        name: 'Yoda',
+        favoriteMovies: ['Moonlight']
+
+    },
     
 ];
 
