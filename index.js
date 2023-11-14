@@ -57,7 +57,7 @@ const topMovies = [
         title: 'Good Will Hunting', 
         year: '1997',
         genre: { 
-            genreName: 'psychodrama',
+            genreName: 'Psychodrama',
             description: 'Psychodrama is a sub-genre of drama that places emphasis on psychological elements'
         },
         director: {
