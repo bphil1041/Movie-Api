@@ -196,7 +196,7 @@ const topMovies = [
             name: 'Barry Jenkins',
             birth: '1979',
             death: '',
-            bio: ''
+            bio: 'Barry Jenkins (born November 19, 1979) is an American filmmaker. After making his filmmaking debut with the short film My Josephine (2003), he directed his first feature film Medicine for Melancholy (2008) for which he received an Independent Spirit Award nomination for Best First Feature. He is also a member of The Chopstars collective as a creative collaborator.'
         },
     },
 ];
