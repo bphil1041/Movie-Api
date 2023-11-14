@@ -43,7 +43,7 @@ const topMovies = [
         },
         director: {
             name: 'David Lynch',
-            birth: '1946',
+            birth: '1946-01-20',
             death: '-',
             bio: 'David Keith Lynch is an American filmmaker, visual artist, musician and actor. Lynch has received critical acclaim for his films, which are often distinguished by their surrealist qualities. He has received numerous accolades, including the Golden Lion in 2006 and an Honorary Academy Award in 2019. In 2007, a panel of critics convened by The Guardian announced that "after all the discussion, no one could fault the conclusion that David Lynch is the most important film-maker of the current era.'
         }
@@ -59,7 +59,7 @@ const topMovies = [
         },
         director: {
             name: 'David Lynch',
-            birth: '1946',
+            birth: '1946-01-20',
             death: '-',
             bio: 'David Keith Lynch is an American filmmaker, visual artist, musician and actor. Lynch has received critical acclaim for his films, which are often distinguished by their surrealist qualities. He has received numerous accolades, including the Golden Lion in 2006 and an Honorary Academy Award in 2019. In 2007, a panel of critics convened by The Guardian announced that "after all the discussion, no one could fault the conclusion that David Lynch is the most important film-maker of the current era.'
         }
