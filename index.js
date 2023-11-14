@@ -36,7 +36,9 @@ const topMovies = [
         },
         director: {
             name: 'David Lynch',
-            birth: '1946'
+            birth: '1946',
+            death: '',
+            bio: ''
         }
     },
 
@@ -49,7 +51,9 @@ const topMovies = [
         },
         director: {
             name: 'David Lynch',
-            birth: '1946'
+            birth: '1946',
+            death: '',
+            bio: ''
         }
     },
 
@@ -62,7 +66,9 @@ const topMovies = [
         },
         director: {
             name: 'Gus Van Sant',
-            birth: '1952'
+            birth: '1952',
+            death: '',
+            bio: ''
         },
     },
 
@@ -75,7 +81,9 @@ const topMovies = [
         },
         director: {
             name: 'Peter Weir',
-            birth: '1944'
+            birth: '1944',
+            death: '',
+            bio: ''
         }
     },
 
@@ -88,7 +96,9 @@ const topMovies = [
         },
         director: {
             name: 'Ridley Scott',
-            birth: '1937'
+            birth: '1937',
+            death: '',
+            bio: ''
         },
             
     },
@@ -103,7 +113,9 @@ const topMovies = [
         
         director: {
             name: 'Gareth Edwards',
-            birth: '1975'
+            birth: '1975',
+            death: '',
+            bio: ''
         },
     },
 
@@ -117,7 +129,9 @@ const topMovies = [
     
         director: {
             name: 'Hayao Miyazaki',
-            birth: '1941'
+            birth: '1941',
+            death: '',
+            bio: ''
         },
     
     },
@@ -132,7 +146,9 @@ const topMovies = [
         
         director: {
             name: 'Hayao Miyazaki',
-            birth: '1941'
+            birth: '1941',
+            death: '',
+            bio: ''
         },
     },    
 
@@ -146,7 +162,9 @@ const topMovies = [
         
         director: {
             name: 'Anthony Minghella',
-            birth: '1954'
+            birth: '1954',
+            death: '',
+            bio: ''
         },
     },
 
@@ -160,7 +178,9 @@ const topMovies = [
         
         director: {
             name: 'Barry Jenkins',
-            birth: '1979'
+            birth: '1979',
+            death: '',
+            bio: ''
         },
     },
 ];
