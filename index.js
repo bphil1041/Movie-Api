@@ -36,6 +36,7 @@ const topMovies = [
     { 
         title: 'Mulholland Drive', 
         year: '2001',
+        description: 'Mulholland Drive (stylized as Mulholland Dr.) is a 2001 surrealist neo-noir mystery film written and directed by David Lynch, and starring Naomi Watts, Laura Harring, Justin Theroux, Ann Miller, Mark Pellegrino and Robert Forster. It tells the story of an aspiring actress named Betty Elms (Watts), newly arrived in Los Angeles, who meets and befriends an amnesiac woman (Harring) recovering from a car accident. The story follows several other vignettes and characters, including a Hollywood film director (Theroux).',
         genre: {
             genreName: 'Surrealist',
             description: 'The Surrealist movement used shocking, irrational, or absurd imagery and Feudian dream symbolism to challenge the tradition function of art to represent reality.'
@@ -51,6 +52,7 @@ const topMovies = [
     { 
         title: 'Fire Walk With Me', 
         year: '1992',
+        description: '',
         genre: {
             genreName: 'Psychological horror',
             description: 'Psychological horror is a subgenre of horror and psychological fiction with a particular focus on mental, emotional, and psychological states to frighten, disturb, or unsettle its audience.'
@@ -66,6 +68,7 @@ const topMovies = [
     { 
         title: 'Good Will Hunting', 
         year: '1997',
+        description: '',
         genre: { 
             genreName: 'Psychodrama',
             description: 'Psychodrama is a sub-genre of drama that places emphasis on psychological elements'
@@ -81,6 +84,7 @@ const topMovies = [
     { 
         title: 'Dead Poets Society', 
         year: '1989',
+        description: '',
         genre: {
             genreName: 'Drama',
             description: 'Drama is a category or genre of narrative fiction intended to be more serious than humorous in tone.'
@@ -96,6 +100,7 @@ const topMovies = [
     { 
         title: 'American Gangster', 
         year: '2007',
+        description: '',
         genre: {
             genreName: 'Drama',
             description: 'Drama is a category or genre of narrative fiction intended to be more serious than humorous in tone.'
@@ -112,6 +117,7 @@ const topMovies = [
     { 
         title: 'Rogue One: A Star Wars Story', 
         year: '2016',
+        description: '',
         genre: {
             genreName: 'SciFi',
             description: 'Science fiction is a genre of speculative fiction that contains imagined elements that don\'t\ exist in the real world'
@@ -128,6 +134,7 @@ const topMovies = [
     { 
         title: 'Princess Mononoke', 
         year: '1997',
+        description: '',
         genre: {
             genreName: 'Fantasy',
             description: 'Fantasty films are films that belong to the fantasy genre with fantastic themes, usually magic, supernatural events, mythology, folklore, or exotic fantasy worlds.'
@@ -145,6 +152,7 @@ const topMovies = [
     { 
         title: 'Spirited Away', 
         year: '2001',
+        description: '',
         genre: {
             genreName: 'Fantasy',
             description: 'Fantasty films are films that belong to the fantasy genre with fantastic themes, usually magic, supernatural events, mythology, folklore, or exotic fantasy worlds.'
@@ -161,6 +169,7 @@ const topMovies = [
     { 
         title: 'The Talented Mr. Ripley', 
         year: '1999',
+        description: '',
         genre: {
             genreName: 'Drama',
             description: 'Drama is a category or genre of narrative fiction intended to be more serious than humorous in tone.'
@@ -177,6 +186,7 @@ const topMovies = [
     { 
         title: 'Moonlight', 
         year: '2016',
+        description: '',
         genre: {
             genreName: 'Drama',
             description: 'Drama is a category or genre of narrative fiction intended to be more serious than humorous in tone.'
