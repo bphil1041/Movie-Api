@@ -50,9 +50,9 @@ const topMovies = [
     },
 
     { 
-        title: 'Fire Walk With Me', 
+        title: 'Twin Peaks: Fire Walk With Me', 
         year: '1992',
-        description: '',
+        description: 'Twin Peaks: Fire Walk with Me is a 1992 American psychological horror film directed by David Lynch and written by Lynch and Robert Engels. It serves as a prequel to the television series Twin Peaks, created by Mark Frost and Lynch, who were also executive producers. It revolves around the investigation into the murder of Teresa Banks (Pamela Gidley) and the last seven days in the life of Laura Palmer (Sheryl Lee), a popular high school student in the fictional Washington town of Twin Peaks. Unlike the series, which was an uncanny blend of detective fiction, horror, the supernatural, offbeat humor, and soap opera tropes, the film has a much darker, less humorous tone.',
         genre: {
             genreName: 'Psychological horror',
             description: 'Psychological horror is a subgenre of horror and psychological fiction with a particular focus on mental, emotional, and psychological states to frighten, disturb, or unsettle its audience.'
@@ -68,7 +68,7 @@ const topMovies = [
     { 
         title: 'Good Will Hunting', 
         year: '1997',
-        description: '',
+        description: 'Good Will Hunting is a 1997 American psychological drama film directed by Gus Van Sant, and written by Ben Affleck and Matt Damon. It stars Robin Williams, Damon, Affleck, Stellan Skarsgård and Minnie Driver.',
         genre: { 
             genreName: 'Psychodrama',
             description: 'Psychodrama is a sub-genre of drama that places emphasis on psychological elements'
@@ -84,7 +84,7 @@ const topMovies = [
     { 
         title: 'Dead Poets Society', 
         year: '1989',
-        description: '',
+        description: 'Dead Poets Society is a 1989 American coming-of-age drama film directed by Peter Weir and written by Tom Schulman. The film, starring Robin Williams, is set in 1959 at the fictional elite boarding school Welton Academy, and tells the story of an English teacher who inspires his students through his teaching of poetry.',
         genre: {
             genreName: 'Drama',
             description: 'Drama is a category or genre of narrative fiction intended to be more serious than humorous in tone.'
@@ -100,7 +100,7 @@ const topMovies = [
     { 
         title: 'American Gangster', 
         year: '2007',
-        description: '',
+        description: 'American Gangster is a 2007 American biographical crime film directed and produced by Ridley Scott and written by Steven Zaillian. The film is loosely based on the criminal career of Frank Lucas, a gangster from La Grange, North Carolina who smuggled heroin into the United States on American service planes returning from the Vietnam War, before being detained by a task force led by Newark Detective Richie Roberts. The film stars Denzel Washington and Russell Crowe, with co-stars Ted Levine, John Ortiz, Josh Brolin, Chiwetel Ejiofor, Ruby Dee, Lymari Nadal and Cuba Gooding Jr.',
         genre: {
             genreName: 'Drama',
             description: 'Drama is a category or genre of narrative fiction intended to be more serious than humorous in tone.'
@@ -117,7 +117,7 @@ const topMovies = [
     { 
         title: 'Rogue One: A Star Wars Story', 
         year: '2016',
-        description: '',
+        description: 'Rogue One: A Star Wars Story (or simply Rogue One) is a 2016 American epic space opera film directed by Gareth Edwards. The screenplay by Chris Weitz and Tony Gilroy is from a story by John Knoll and Gary Whitta. It was produced by Lucasfilm and distributed by Walt Disney Studios Motion Pictures. It is the first installment of the Star Wars anthology series, and an immediate prequel to Star Wars (1977). The main cast consists of Felicity Jones, Diego Luna, Ben Mendelsohn, Donnie Yen, Mads Mikkelsen, Alan Tudyk, Riz Ahmed, Jiang Wen, and Forest Whitaker. Set a week before Star Wars, the plot follows a group of rebels who band together to steal plans of the Death Star, the ultimate weapon of the Galactic Empire. It details the Rebel Alliance\'s first effective victory against the Empire, first referenced in Star Wars\' opening crawl.',
         genre: {
             genreName: 'SciFi',
             description: 'Science fiction is a genre of speculative fiction that contains imagined elements that don\'t\ exist in the real world'
@@ -134,7 +134,7 @@ const topMovies = [
     { 
         title: 'Princess Mononoke', 
         year: '1997',
-        description: '',
+        description: 'Princess Mononoke is set in the late Muromachi period of Japan (approximately 1336 to 1573 AD) and includes fantasy elements. The story follows a young Emishi prince named Ashitaka, and his involvement in a struggle between the gods (kami) of a forest and the humans who consume its resources. The film deals with themes of Shinto and environmentalism. The term mononoke (物の怪, or もののけ) is not a name, but a Japanese word for supernatural, shape-shifting beings that possess people and cause suffering, disease, or death.',
         genre: {
             genreName: 'Fantasy',
             description: 'Fantasty films are films that belong to the fantasy genre with fantastic themes, usually magic, supernatural events, mythology, folklore, or exotic fantasy worlds.'
@@ -152,7 +152,7 @@ const topMovies = [
     { 
         title: 'Spirited Away', 
         year: '2001',
-        description: '',
+        description: 'Spirited Away tells the story of Chihiro Ogino (Hiiragi), a ten-year-old girl who, while moving to a new neighborhood, enters the world of kami (spirits of Japanese Shinto folklore). After her parents are turned into pigs by the witch Yubaba (Natsuki), Chihiro takes a job working in Yubaba\'s bathhouse to find a way to free herself and her parents and return to the human world.',
         genre: {
             genreName: 'Fantasy',
             description: 'Fantasty films are films that belong to the fantasy genre with fantastic themes, usually magic, supernatural events, mythology, folklore, or exotic fantasy worlds.'
@@ -169,7 +169,7 @@ const topMovies = [
     { 
         title: 'The Talented Mr. Ripley', 
         year: '1999',
-        description: '',
+        description: 'The Talented Mr. Ripley is a 1999 American psychological thriller film written and directed by Anthony Minghella, and based on Patricia Highsmith\'s 1955 novel of the same name. Set in the 1950s, it stars Matt Damon as Tom Ripley, an underachieving young man that is sent from New York City to Italy to retrieve Dickie Greenleaf, a rich and spoiled playboy, and convince him to return home - however, after failing, Ripley takes extreme measures. Jude Law, Gwyneth Paltrow, Cate Blanchett and Philip Seymour Hoffman also appear in supporting roles.',
         genre: {
             genreName: 'Drama',
             description: 'Drama is a category or genre of narrative fiction intended to be more serious than humorous in tone.'
@@ -186,7 +186,7 @@ const topMovies = [
     { 
         title: 'Moonlight', 
         year: '2016',
-        description: '',
+        description: 'Moonlight is a 2016 American coming-of-age drama film written and directed by Barry Jenkins, based on Tarell Alvin McCraney\'s unpublished semi-autobiographical play In Moonlight Black Boys Look Blue. It stars Trevante Rhodes, André Holland, Janelle Monáe, Ashton Sanders, Jharrel Jerome, Naomie Harris, and Mahershala Ali.',
         genre: {
             genreName: 'Drama',
             description: 'Drama is a category or genre of narrative fiction intended to be more serious than humorous in tone.'
