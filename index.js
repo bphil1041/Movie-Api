@@ -37,8 +37,8 @@ const topMovies = [
         director: {
             name: 'David Lynch',
             birth: '1946',
-            death: '',
-            bio: ''
+            death: '-',
+            bio: 'David Keith Lynch is an American filmmaker, visual artist, musician and actor. Lynch has received critical acclaim for his films, which are often distinguished by their surrealist qualities. He has received numerous accolades, including the Golden Lion in 2006 and an Honorary Academy Award in 2019. In 2007, a panel of critics convened by The Guardian announced that "after all the discussion, no one could fault the conclusion that David Lynch is the most important film-maker of the current era.'
         }
     },
 
@@ -52,8 +52,8 @@ const topMovies = [
         director: {
             name: 'David Lynch',
             birth: '1946',
-            death: '',
-            bio: ''
+            death: '-',
+            bio: 'David Keith Lynch is an American filmmaker, visual artist, musician and actor. Lynch has received critical acclaim for his films, which are often distinguished by their surrealist qualities. He has received numerous accolades, including the Golden Lion in 2006 and an Honorary Academy Award in 2019. In 2007, a panel of critics convened by The Guardian announced that "after all the discussion, no one could fault the conclusion that David Lynch is the most important film-maker of the current era.'
         }
     },
 
@@ -67,8 +67,8 @@ const topMovies = [
         director: {
             name: 'Gus Van Sant',
             birth: '1952',
-            death: '',
-            bio: ''
+            death: '-',
+            bio: 'Gus Green Van Sant Jr. (born July 24, 1952) is an American film director, producer, photographer, and musician who has earned acclaim as an independent filmmaker. His films typically deal with themes of marginalized subcultures, in particular homosexuality. Van Sant is considered one of the most prominent auteurs of the New Queer Cinema movement.'
         },
     },
 
@@ -82,8 +82,8 @@ const topMovies = [
         director: {
             name: 'Peter Weir',
             birth: '1944',
-            death: '',
-            bio: ''
+            death: '-',
+            bio: 'Peter Lindsay Weir is an Australian retired film director. He is known for directing films crossing various genres over forty years with films such as Picnic at Hanging Rock (1975), Gallipoli (1981), Witness (1985), Dead Poets Society (1989), Fearless (1993), The Truman Show (1998), Master and Commander: The Far Side of the World (2003), and The Way Back (2010). He has received six Academy Award nominations, ultimately being awarded the Academy Honorary Award in 2022 for his lifetime achievement career.'
         }
     },
 
@@ -97,8 +97,8 @@ const topMovies = [
         director: {
             name: 'Ridley Scott',
             birth: '1937',
-            death: '',
-            bio: ''
+            death: '-',
+            bio: 'Sir Ridley Scott is an English filmmaker. He is best known for directing films in the science fiction, crime, and historical drama genres. His work is known for its atmospheric and highly concentrated visual style. Scott has received many accolades throughout his career, including the BAFTA Fellowship for lifetime achievement from the British Academy of Film and Television Arts in 2018, two Primetime Emmy Awards, and a Golden Globe Award. In 2003, he was knighted by Queen Elizabeth II.'
         },
             
     },
@@ -114,8 +114,8 @@ const topMovies = [
         director: {
             name: 'Gareth Edwards',
             birth: '1975',
-            death: '',
-            bio: ''
+            death: '-',
+            bio: 'Gareth James Edwards is a Welsh filmmaker. He first gained widespread recognition for Monsters (2010), an independent film in which he served as writer, director, cinematographer, and visual effects artist. He subsequently directed Godzilla (2014), a reboot[5] of Toho\'s Godzilla franchise and the first film in Legendary\'s MonsterVerse, and Rogue One: A Star Wars Story (2016), the first installment of the Star Wars anthology series and an immediate prequel to Star Wars: Episode IV – A New Hope (1977). He would return to making original films with the science fiction thriller The Creator (2023).'
         },
     },
 
@@ -130,8 +130,8 @@ const topMovies = [
         director: {
             name: 'Hayao Miyazaki',
             birth: '1941',
-            death: '',
-            bio: ''
+            death: '-',
+            bio: 'Hayao Miyazaki is a Japanese animator, filmmaker, and manga artist. A co-founder of Studio Ghibli, he has attained international acclaim as a masterful storyteller and creator of Japanese animated feature films, and is widely regarded as one of the most accomplished filmmakers in the history of animation.'
         },
     
     },
@@ -147,8 +147,8 @@ const topMovies = [
         director: {
             name: 'Hayao Miyazaki',
             birth: '1941',
-            death: '',
-            bio: ''
+            death: '-',
+            bio: 'Hayao Miyazaki is a Japanese animator, filmmaker, and manga artist. A co-founder of Studio Ghibli, he has attained international acclaim as a masterful storyteller and creator of Japanese animated feature films, and is widely regarded as one of the most accomplished filmmakers in the history of animation.'
         },
     },    
 
@@ -163,8 +163,8 @@ const topMovies = [
         director: {
             name: 'Anthony Minghella',
             birth: '1954',
-            death: '',
-            bio: ''
+            death: '2008',
+            bio: 'Anthony Minghella was a British film director, playwright and screenwriter. He was chairman of the board of Governors at the British Film Institute between 2003 and 2007. He directed Truly, Madly, Deeply (1991), The English Patient (1996), The Talented Mr. Ripley (1999), and Cold Mountain (2003), and produced Iris (2001), The Quiet American (2002), Michael Clayton (2007), and The Reader (2008).'
         },
     },
 
