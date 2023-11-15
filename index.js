@@ -32,7 +32,7 @@ let users = [
         userid: 3,
         username: 'Yoda',
         password: 'mastery0d@',
-        email: 'yoda@hotmail.com',
+        email: 'yoda@jedicounil.gov',
         birthday: '1123-01-01',
         favoriteMovies: ['Moonlight']
 
