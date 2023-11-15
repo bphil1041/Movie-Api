@@ -16,7 +16,7 @@ let users = [
         userid: 1,
         username: 'Ben',
         password: 'yolo',
-        email: 'ben@hotmail.com',
+        email: 'benjamin.r.phillips1041@gmail.com',
         birthday: '1993-06-02',
         favoriteMovies: ['Mulholland Drive']
     },
