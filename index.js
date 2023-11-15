@@ -13,18 +13,27 @@ app.use(bodyParser.json());
 
 let users = [
     {
-        id: 1,
-        name: 'Ben',
+        userid: 1,
+        username: 'Ben',
+        password: 'yolo',
+        email: 'benjamin.r.phillips1041@gmail.com',
+        birthday: '1993-06-02',
         favoriteMovies: ['Mulholland Drive']
     },
     {
-        id: 2,
-        name: 'Obi-Wan',
+        userid: 2,
+        username: 'Obi-Wan',
+        password: 'highground',
+        email: 'obi-wan@kenobi.com',
+        birthday: '1973-03-31',
         favoriteMovies: ['American Gangster']
     },
     {
-        id: 3,
-        name: 'Yoda',
+        userid: 3,
+        username: 'Yoda',
+        password: 'mastery0d@',
+        email: 'yoda@hotmail.com',
+        birthday: '1123-01-01',
         favoriteMovies: ['Moonlight']
 
     },
