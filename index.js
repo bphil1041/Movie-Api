@@ -37,6 +37,24 @@ let users = [
         favoriteMovies: ['Moonlight']
 
     },
+    {
+        userid: 4,
+        username: 'Mace Windu',
+        password: 'purple',
+        email: 'mace@jedicounil.gov',
+        birthday: '1969-06-09',
+        favoriteMovies: ['Spirited Away']
+
+    },
+    {
+        userid: 5,
+        username: 'Ki Adi Mundi',
+        password: 'maytheforcebewithyou',
+        email: 'kiadi@jedicounil.gov',
+        birthday: '1924-012-025',
+        favoriteMovies: ['Twin Peaks: Fire Walk With Me']
+
+    },
     
 ];
 
