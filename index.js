@@ -51,7 +51,7 @@ let users = [
         username: 'Ki Adi Mundi',
         password: 'maytheforcebewithyou',
         email: 'kiadi@jedicounil.gov',
-        birthday: '1924-012-025',
+        birthday: '1924-12-25',
         favoriteMovies: ['Twin Peaks: Fire Walk With Me']
 
     },
