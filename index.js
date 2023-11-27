@@ -3,6 +3,11 @@ const morgan = require('morgan');
 const bodyParser = require('body-parser');
 const app = express();
 const uuid = require('uuid');
+const mongoose = require('mongoose');
+const models = require('./models.js');
+
+const Movies = Models.Movie;
+const Users = Models.User;
 
 
 //Middleware to log requests
