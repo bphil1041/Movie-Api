@@ -4,13 +4,11 @@ const bodyParser = require('body-parser');
 const app = express();
 const uuid = require('uuid');
 const mongoose = require('mongoose');
-const models = require('./models.js');
-
+const Models = require('./models.js');
 const Movies = Models.Movie;
 const Users = Models.User;
 
-mongoose.connect('mongodb://localhost:27017/movies', { useNewUrlParser: true, useUnifiedTopology: true});
-
+mongoose.connect('mongodb://localhost:27017/myFLixDB', { useNewUrlParser: true, useUnifiedTopology: true });
 
 //Middleware to log requests
 app.use(morgan('dev'));
@@ -263,6 +261,18 @@ app.post('/users', async (req, res) => {
       });
   });
 
+//READ data about users
+app.get('/users', async (req, res) => {
+    await Users.find()
+        .then((users) => {
+            res.status(201).json(users);
+        })
+        .catch((err) => {
+            console.error(err);
+            res.status(500).send('Error: ' + err);
+        });
+});  
+
 //UPDATE user
 app.put('/users/:id', (req, res) => {
     const { id } = req.params;
@@ -387,3 +397,4 @@ const PORT = 8080;
 app.listen(PORT, () => {
     console.log('Server is running on port 8080');
 });
+
