@@ -8,7 +8,7 @@ const Models = require('./models.js');
 const Movies = Models.Movie;
 const Users = Models.User;
 
-mongoose.connect('mongodb://localhost:27017/myFLixDB', { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect('mongodb://localhost:27017/myFlixDB', { useNewUrlParser: true, useUnifiedTopology: true });
 
 //Middleware to log requests
 app.use(morgan('dev'));
@@ -16,52 +16,7 @@ app.use(morgan('dev'));
 //Body parser middleware to handle POST req data
 app.use(bodyParser.json());
 
-let users = [
-    {
-        userid: 1,
-        username: 'Ben',
-        password: 'yolo',
-        email: 'benjamin.r.phillips1041@gmail.com',
-        birthday: '1993-06-02',
-        favoriteMovies: ['Mulholland Drive']
-    },
-    {
-        userid: 2,
-        username: 'Obi-Wan',
-        password: 'highground',
-        email: 'obi-wan@kenobi.com',
-        birthday: '1973-03-31',
-        favoriteMovies: ['American Gangster']
-    },
-    {
-        userid: 3,
-        username: 'Yoda',
-        password: 'mastery0d@',
-        email: 'yoda@jedicounil.gov',
-        birthday: '1123-01-01',
-        favoriteMovies: ['Moonlight']
 
-    },
-    {
-        userid: 4,
-        username: 'Mace Windu',
-        password: 'purple',
-        email: 'mace@jedicounil.gov',
-        birthday: '1969-06-09',
-        favoriteMovies: ['Spirited Away']
-
-    },
-    {
-        userid: 5,
-        username: 'Ki Adi Mundi',
-        password: 'maytheforcebewithyou',
-        email: 'kiadi@jedicounil.gov',
-        birthday: '1924-12-25',
-        favoriteMovies: ['Twin Peaks: Fire Walk With Me']
-
-    },
-    
-];
 
 // Movies
 const topMovies = [
@@ -264,14 +219,26 @@ app.post('/users', async (req, res) => {
 //READ data about users
 app.get('/users', async (req, res) => {
     await Users.find()
-        .then((users) => {
-            res.status(201).json(users);
-        })
-        .catch((err) => {
-            console.error(err);
-            res.status(500).send('Error: ' + err);
-        });
-});  
+      .then((users) => {
+        res.status(201).json(users);
+      })
+      .catch((err) => {
+        console.error(err);
+        res.status(500).send('Error: ' + err);
+      });
+  });
+
+//READ get a user by username
+app.get('/users/:Username', async (req, res) => {
+    await Users.findOne({ Username: req.params.Username })
+      .then((user) => {
+        res.json(user);
+      })
+      .catch((err) => {
+        console.error(err);
+        res.status(500).send('Error: ' + err);
+      });
+  });
 
 //UPDATE user
 app.put('/users/:id', (req, res) => {
@@ -398,3 +365,49 @@ app.listen(PORT, () => {
     console.log('Server is running on port 8080');
 });
 
+// let users = [
+//     {
+//         userid: 1,
+//         username: 'Ben',
+//         password: 'yolo',
+//         email: 'benjamin.r.phillips1041@gmail.com',
+//         birthday: '1993-06-02',
+//         favoriteMovies: ['Mulholland Drive']
+//     },
+//     {
+//         userid: 2,
+//         username: 'Obi-Wan',
+//         password: 'highground',
+//         email: 'obi-wan@kenobi.com',
+//         birthday: '1973-03-31',
+//         favoriteMovies: ['American Gangster']
+//     },
+//     {
+//         userid: 3,
+//         username: 'Yoda',
+//         password: 'mastery0d@',
+//         email: 'yoda@jedicounil.gov',
+//         birthday: '1123-01-01',
+//         favoriteMovies: ['Moonlight']
+
+//     },
+//     {
+//         userid: 4,
+//         username: 'Mace Windu',
+//         password: 'purple',
+//         email: 'mace@jedicounil.gov',
+//         birthday: '1969-06-09',
+//         favoriteMovies: ['Spirited Away']
+
+//     },
+//     {
+//         userid: 5,
+//         username: 'Ki Adi Mundi',
+//         password: 'maytheforcebewithyou',
+//         email: 'kiadi@jedicounil.gov',
+//         birthday: '1924-12-25',
+//         favoriteMovies: ['Twin Peaks: Fire Walk With Me']
+
+//     },
+    
+// ];
