@@ -2,6 +2,9 @@ const express = require('express');
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
 const app = express();
+    app.use(express.json());
+    app.use(express.urlencoded({ extended: true }));
+
 const uuid = require('uuid');
 const mongoose = require('mongoose');
 const Models = require('./models.js');
@@ -15,7 +18,7 @@ mongoose.connect('mongodb://localhost:27017/myFLixDB', { useNewUrlParser: true, 
 app.use(morgan('dev'));
 
 //Body parser middleware to handle POST req data
-app.use(bodyParser.json());
+// app.use(bodyParser.json());
 
 //CREATE: add user
 app.post('/users', async (req, res) => {
