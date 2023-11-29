@@ -18,6 +18,7 @@ app.use(bodyParser.json());
 
 //CREATE: add user
 app.post('/users', async (req, res) => {
+    console.log('Received request body:', req.body); 
     await Users.findOne({ Username: req.body.Username })
       .then((user) => {
         if (user) {
@@ -41,6 +42,7 @@ app.post('/users', async (req, res) => {
         console.error(error);
         res.status(500).send('Error: ' + error);
       });
+      
   });
 
 //READ data about users
