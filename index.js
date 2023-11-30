@@ -73,6 +73,26 @@ app.get('/users/:Username', async (req, res) => {
       });
   });
 
+  app.put('/users/:Username', async (req, res) => {
+    await Users.findOneAndUpdate({ Username: req.params.Username }, { $set:
+      {
+        Username: req.body.Username,
+        Password: req.body.Password,
+        Email: req.body.Email,
+        Birthday: req.body.Birthday
+      }
+    },
+    { new: true }) 
+    .then((updatedUser) => {
+      res.json(updatedUser);
+    })
+    .catch((err) => {
+      console.error(err);
+      res.status(500).send('Error: ' + err);
+    })
+  
+  });
+
 //UPDATE user
 app.put('/users/:id', (req, res) => {
     const { id } = req.params;
@@ -89,18 +109,19 @@ app.put('/users/:id', (req, res) => {
 });
 
 //CREATE favorite movie 
-app.post('/users/:id/:title', (req, res) => {
-    const { id, title } = req.params;
-
-    let user = users.find(user => user.id == id);
-
-    if (user) {
-        user.favoriteMovies.push(title);
-        res.status(200).send(`${title} has been added to user ${id}'s array`);
-    } else {
-        res.status(404).send('No such user');
-    }
-});
+app.post('/users/:Username/movies/:MovieID', async (req, res) => {
+    await Users.findOneAndUpdate({ Username: req.params.Username }, {
+       $push: { FavoriteMovies: req.params.MovieID }
+     },
+     { new: true }) 
+    .then((updatedUser) => {
+      res.json(updatedUser);
+    })
+    .catch((err) => {
+      console.error(err);
+      res.status(500).send('Error: ' + err);
+    });
+  });
 
 //DELETE favorite movie 
 app.delete('/users/:id/:title', (req, res) => {
@@ -118,18 +139,20 @@ app.delete('/users/:id/:title', (req, res) => {
 
 
 //DELETE: allow existing user to deregister 
-app.delete('/users/:id', (req, res) => {
-    const { id } = req.params;
-
-    let user = users.find(user => user.id == id);
-
-    if (user) {
-        users = users.filter( user => user.id != id);
-        res.status(200).send(`user ${id} has been deleted`);
-    } else {
-        res.status(404).send('No such user');
-    }
-});
+app.delete('/users/:Username', async (req, res) => {
+    await Users.findOneAndRemove({ Username: req.params.Username })
+      .then((user) => {
+        if (!user) {
+          res.status(400).send(req.params.Username + ' was not found');
+        } else {
+          res.status(200).send(req.params.Username + ' was deleted.');
+        }
+      })
+      .catch((err) => {
+        console.error(err);
+        res.status(500).send('Error: ' + err);
+      });
+  });
 
 
 //READ: return list of all movies
@@ -176,7 +199,14 @@ app.get('/topmovies/director/:name', (req, res) => {
 
 //Endpoint to get a JSON response with topMovies data
 app.get('/movies', (req, res) => {
-    res.json({ topMovies: topMovies});
+    Movies.find()
+        .then((movies) => {
+            res.status(201).json(movies);
+        })
+        .catch((err) => {
+            console.error(err);
+            res.status(500).send("Error: " + err);
+        });
 });
 
 //Default endpoint that responds with a welcome message
