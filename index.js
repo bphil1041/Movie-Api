@@ -95,9 +95,6 @@ app.put('/users/:Username', async (req, res) => {
 
 });
 
-
-
-
 //CREATE favorite movie 
 app.post('/users/:Username/movies/:MovieID', async (req, res) => {
     await Users.findOneAndUpdate({ Username: req.params.Username }, {
@@ -183,18 +180,18 @@ app.get('/movies/genre/:genreName', (req, res) => {
         });
 });
 
-
-
 // READ: return director
-app.get('/topmovies/director/:name', (req, res) => {
+app.get('/movies/director/:name', (req, res) => {
     const { name } = req.params;
-    const director = topMovies.find(movie => movie.director.name.toLowerCase() === name.toLowerCase());
 
-    if (director) {
-        res.status(200).json(director);
-    } else {
-        res.status(404).send('No such director.');
-    }
+    Movies.find({ 'director.name': name })
+        .then((movies) => {
+            res.status(200).json(movies);
+        })
+        .catch((err) => {
+            console.error(err);
+            res.status(500).send('Error: ' + err);
+        });
 });
 
 //Endpoint to get a JSON response with movies data
