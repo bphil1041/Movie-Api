@@ -211,7 +211,7 @@ app.get('/movies', (req, res) => {
 
 //Default endpoint that responds with a welcome message
 app.get('/', (req, res) => {
-    res.send('Welcome to my movie database!');
+    res.send('Welcome to myFlix!');
 });
 
 //Middleware to serve static files from "public" directory
