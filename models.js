@@ -3,19 +3,23 @@ const mongoose = require('mongoose');
 
 //Define MongoDB schemas
 let movieSchema = mongoose.Schema({
-    title: {type: String, required: true},
-    description: {type: String, required: true},
     genre: {
-      genreName: String,
-      Description: String
+        genreName: String,
+        description: String,
     },
     director: {
-      name: String,
-      Bio: String
+        name: String,
+        birth: String,
+        death: String,
+        bio: String
     },
-    Actors: [String],
-    ImagePath: String,
-    Featured: Boolean
+    Actors: String,
+    _id: String,
+    title: {type: String, required: true},
+    year: String,
+    description: {type: String, required: true},
+    MovieId: Number,
+
   });
   
   let userSchema = mongoose.Schema({
