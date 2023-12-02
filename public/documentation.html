@@ -59,7 +59,7 @@
         </tr>
         <tr>
             <td>Allow users to update their information.</td>
-            <td>/users/:id</td>
+            <td>/users/:Username</td>
             <td>PUT</td>
             <td>None</td>
             <td>
@@ -87,7 +87,7 @@
         </tr>
         <tr>
             <td>Allow users to add a favorite movie.</td>
-            <td>/users/:id/:title</td>
+            <td>/users/:Username/movies/:MovieId</td>
             <td>POST</td>
             <td>None</td>
             <td>None in the body, title as a parameter</td>
@@ -99,32 +99,41 @@
         </tr>
         <tr>
             <td>Allow users to delete a favorite movie.</td>
-            <td>/users/:id/:title</td>
+            <td>/users/:Username/movies/:MovieId</td>
             <td>DELETE</td>
             <td>None</td>
             <td>None in the body, title as a parameter</td>
             <td>
                 <code>
-                    "Spirited Away has been removed from user 1's array"
+                    {
+                        "_id": "656aaa44b09c7f8ddb4a5ad9",
+                        "Username": "Patrick Star",
+                        "Password": "jellyfishing",
+                        "Email": "patrick@gmail.com",
+                        "FavoriteMovies": [
+                            "655d2f5d0d1147d367398920"
+                        ],
+                        "__v": 0
+                    }
                 </code>
             </td>
         </tr>
         <tr>
             <td>Allow existing user to deregister.</td>
-            <td>/users/:id</td>
+            <td>/users/:Username</td>
             <td>DELETE</td>
             <td>None</td>
             <td>None in the body</td>
             <td>
                 <code>
-                    "user 2 has been deleted"
+                    "Jake the Dog was deleted"
                 </code>
 
             </td>
         </tr>
         <tr>
             <td>Return a list of all movies.</td>
-            <td>/topmovies</td>
+            <td>/movies</td>
             <td>GET</td>
             <td>None</td>
             <td>None</td>
@@ -132,7 +141,7 @@
         </tr>
         <tr>
             <td>Return a single movie.</td>
-            <td>/topmovies/:title</td>
+            <td>/movies/:title</td>
             <td>GET</td>
             <td>None</td>
             <td>None</td>
@@ -140,7 +149,7 @@
         </tr>
         <tr>
             <td>Return a genre.</td>
-            <td>/topmovies/genre/:genreName</td>
+            <td>/movies/genre/:genreName</td>
             <td>GET</td>
             <td>None</td>
             <td>None</td>
@@ -148,7 +157,7 @@
         </tr>
         <tr>
             <td>Return information on director.</td>
-            <td>/topmovies/director/:name</td>
+            <td>/movies/director/:name</td>
             <td>GET</td>
             <td>None</td>
             <td>None</td>
