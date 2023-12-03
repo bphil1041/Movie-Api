@@ -22,6 +22,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 //Import auth
 let auth = require('./auth')(app);
+const passport = require('passport');
+require('./passport');
 
 //CREATE: add user
 app.post('/users', async (req, res) => {
