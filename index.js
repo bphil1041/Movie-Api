@@ -18,7 +18,10 @@ mongoose.connect('mongodb://localhost:27017/myFLixDB', { useNewUrlParser: true, 
 app.use(morgan('dev'));
 
 //Body parser middleware to handle POST req data
-// app.use(bodyParser.json());
+app.use(bodyParser.json());
+
+//Import auth
+app.use(bodyParser.urlencoded({ extended: true}));
 
 //CREATE: add user
 app.post('/users', async (req, res) => {
