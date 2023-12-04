@@ -26,7 +26,7 @@ const passport = require('passport');
 require('./passport');
 
 //CREATE: add user
-app.post('/users', async (req, res) => {
+app.post('/users',  passport.authenticate('jwt', {session: false}),  async (req, res) => {
     console.log('Received request body:', req.body);
     await Users.findOne({ Username: req.body.Username })
         .then((user) => {
@@ -79,7 +79,7 @@ app.get('/users/:Username',  passport.authenticate('jwt', {session: false}), asy
 });
 
 //UPDATE user
-app.put('/users/:Username', async (req, res) => {
+app.put('/users/:Username',  passport.authenticate('jwt', {session: false}), async (req, res) => {
     await Users.findOneAndUpdate({ Username: req.params.Username }, {
         $set:
         {
@@ -101,7 +101,7 @@ app.put('/users/:Username', async (req, res) => {
 });
 
 //CREATE favorite movie 
-app.post('/users/:Username/movies/:MovieID', async (req, res) => {
+app.post('/users/:Username/movies/:MovieID',  passport.authenticate('jwt', {session: false}), async (req, res) => {
     await Users.findOneAndUpdate({ Username: req.params.Username }, {
         $push: { FavoriteMovies: req.params.MovieID }
     },
@@ -117,7 +117,7 @@ app.post('/users/:Username/movies/:MovieID', async (req, res) => {
 
 
 // DELETE favorite movie
-app.delete('/users/:Username/movies/:MovieID', async (req, res) => {
+app.delete('/users/:Username/movies/:MovieID',  passport.authenticate('jwt', {session: false}), async (req, res) => {
     await Users.findOneAndUpdate(
         { Username: req.params.Username },
         { $pull: { FavoriteMovies: req.params.MovieID } },
@@ -135,7 +135,7 @@ app.delete('/users/:Username/movies/:MovieID', async (req, res) => {
 
 
 //DELETE: allow existing user to deregister 
-app.delete('/users/:Username', async (req, res) => {
+app.delete('/users/:Username',  passport.authenticate('jwt', {session: false}), async (req, res) => {
     await Users.findOneAndDelete({ Username: req.params.Username })
         .then((user) => {
             if (!user) {
@@ -152,7 +152,7 @@ app.delete('/users/:Username', async (req, res) => {
 
 
 //READ: return list of all movies
-app.get('/movies',  passport.authenticate('jwt', {session: false}), (req, res) => {
+app.get('/movies',  passport.authenticate('jwt', {session: false}),  passport.authenticate('jwt', {session: false}), (req, res) => {
     Movies.find()
         .then((movies) => {
             res.status(201).json(movies);
@@ -164,7 +164,7 @@ app.get('/movies',  passport.authenticate('jwt', {session: false}), (req, res) =
 });
 
 //READ: return single movie
-app.get('/movies/:title', (req, res) => {
+app.get('/movies/:title',  passport.authenticate('jwt', {session: false}), (req, res) => {
     Movies.findOne({ title: req.params.title })
         .then((movie) => {
             res.json(movie);
@@ -176,7 +176,7 @@ app.get('/movies/:title', (req, res) => {
 });
 
 // READ: return genre
-app.get('/movies/genre/:genreName', (req, res) => {
+app.get('/movies/genre/:genreName',  passport.authenticate('jwt', {session: false}), (req, res) => {
     const { genreName } = req.params;
 
     Movies.find({ 'genre.genreName': genreName })
@@ -190,7 +190,7 @@ app.get('/movies/genre/:genreName', (req, res) => {
 });
 
 // READ: return director
-app.get('/movies/director/:name', (req, res) => {
+app.get('/movies/director/:name',  passport.authenticate('jwt', {session: false}), (req, res) => {
     const { name } = req.params;
 
     Movies.find({ 'director.name': name })
@@ -204,7 +204,7 @@ app.get('/movies/director/:name', (req, res) => {
 });
 
 //Endpoint to get a JSON response with movies data
-app.get('/movies', (req, res) => {
+app.get('/movies',  passport.authenticate('jwt', {session: false}), (req, res) => {
     Movies.find()
         .then((movies) => {
             res.status(201).json(movies);
@@ -216,7 +216,7 @@ app.get('/movies', (req, res) => {
 });
 
 //Default endpoint that responds with a welcome message
-app.get('/', (req, res) => {
+app.get('/',  passport.authenticate('jwt', {session: false}), (req, res) => {
     res.send('Welcome to myFlix!');
 });
 
