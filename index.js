@@ -14,14 +14,18 @@ const Users = Models.User;
 
 mongoose.connect('mongodb://localhost:27017/myFLixDB', { useNewUrlParser: true, useUnifiedTopology: true });
 
+
+const cors = require('cors');
+app.use(ros());
+
+//Import auth
+let auth = require('./auth')(app);
+
 //Middleware to log requests
 app.use(morgan('dev'));
 
 //Body parser middleware to handle POST req data
 app.use(bodyParser.urlencoded({ extended: true }));
-
-//Import auth
-let auth = require('./auth')(app);
 
 //Import passport
 const passport = require('passport');
