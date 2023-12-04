@@ -135,7 +135,7 @@ app.delete('/users/:Username/movies/:MovieID',  passport.authenticate('jwt', {se
 
 
 //DELETE: allow existing user to deregister 
-app.delete('/users/:Username', async (req, res) => {
+app.delete('/users/:Username', passport.authenticate('jwt', {session: false}), async (req, res) => {
     await Users.findOneAndDelete({ Username: req.params.Username })
         .then((user) => {
             if (!user) {
