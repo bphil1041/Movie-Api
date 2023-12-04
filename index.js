@@ -152,8 +152,8 @@ app.delete('/users/:Username', passport.authenticate('jwt', { session: false }),
 
 
 //READ: return list of all movies
-app.get('/movies', passport.authenticate('jwt', { session: false }), (req, res) => {
-    Movies.find()
+app.get('/movies', passport.authenticate('jwt', { session: false }), async (req, res) => {
+    await Movies.find()
         .then((movies) => {
             res.status(201).json(movies);
         })
