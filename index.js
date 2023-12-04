@@ -26,7 +26,7 @@ const passport = require('passport');
 require('./passport');
 
 //CREATE: add user
-app.post('/users', passport.authenticate('jwt', {session: false}), async (req, res) => {
+app.post('/users', async (req, res) => {
     console.log('Received request body:', req.body);
     await Users.findOne({ Username: req.body.Username })
         .then((user) => {
