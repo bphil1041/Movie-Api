@@ -25,7 +25,7 @@ let auth = require('./auth')(app);
 const passport = require('passport');
 require('./passport');
 
-//CREATE: add user, no passport so anyone can register
+//CREATE: add user
 app.post('/users', async (req, res) => {
     console.log('Received request body:', req.body);
     await Users.findOne({ Username: req.body.Username })
@@ -55,7 +55,7 @@ app.post('/users', async (req, res) => {
 });
 
 //READ data about users
-app.get('/users', async (req, res) => {
+app.get('/users',  passport.authenticate('jwt', {session: false}), async (req, res) => {
     await Users.find()
         .then((users) => {
             res.status(201).json(users);
@@ -67,7 +67,7 @@ app.get('/users', async (req, res) => {
 });
 
 //READ get a user by username
-app.get('/users/:Username', async (req, res) => {
+app.get('/users/:Username',  passport.authenticate('jwt', {session: false}), async (req, res) => {
     await Users.findOne({ Username: req.params.Username })
         .then((user) => {
             res.json(user);
