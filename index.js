@@ -26,7 +26,7 @@ const passport = require('passport');
 require('./passport');
 
 //CREATE: add user
-app.post('/users',  passport.authenticate('jwt', {session: false}),  async (req, res) => {
+app.post('/users', async (req, res) => {
     console.log('Received request body:', req.body);
     await Users.findOne({ Username: req.body.Username })
         .then((user) => {
@@ -135,7 +135,7 @@ app.delete('/users/:Username/movies/:MovieID',  passport.authenticate('jwt', {se
 
 
 //DELETE: allow existing user to deregister 
-app.delete('/users/:Username',  passport.authenticate('jwt', {session: false}), async (req, res) => {
+app.delete('/users/:Username', async (req, res) => {
     await Users.findOneAndDelete({ Username: req.params.Username })
         .then((user) => {
             if (!user) {
@@ -152,7 +152,7 @@ app.delete('/users/:Username',  passport.authenticate('jwt', {session: false}), 
 
 
 //READ: return list of all movies
-app.get('/movies',  passport.authenticate('jwt', {session: false}),  passport.authenticate('jwt', {session: false}), (req, res) => {
+app.get('/movies', passport.authenticate('jwt', {session: false}), (req, res) => {
     Movies.find()
         .then((movies) => {
             res.status(201).json(movies);
@@ -200,18 +200,6 @@ app.get('/movies/director/:name',  passport.authenticate('jwt', {session: false}
         .catch((err) => {
             console.error(err);
             res.status(500).send('Error: ' + err);
-        });
-});
-
-//Endpoint to get a JSON response with movies data
-app.get('/movies',  passport.authenticate('jwt', {session: false}), (req, res) => {
-    Movies.find()
-        .then((movies) => {
-            res.status(201).json(movies);
-        })
-        .catch((err) => {
-            console.error(err);
-            res.status(500).send("Error: " + err);
         });
 });
 
