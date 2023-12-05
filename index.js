@@ -35,6 +35,7 @@ require('./passport');
 
 //CREATE: add user
 app.post('/users', async (req, res) => {
+    let hashedPassword = Users.hashPassword(req.body.Password);
     console.log('Received request body:', req.body);
     await Users.findOne({ Username: req.body.Username })
         .then((user) => {
@@ -44,7 +45,7 @@ app.post('/users', async (req, res) => {
                 Users
                     .create({
                         Username: req.body.Username,
-                        Password: req.body.Password,
+                        Password: hashedPassword,
                         Email: req.body.Email,
                         Birthday: req.body.Birthday
                     })
