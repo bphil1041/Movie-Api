@@ -36,7 +36,13 @@ require('./passport');
 // ENDPOINTS
 
 //CREATE: add user
-app.post('/users', async (req, res) => {
+app.post('/users',
+    [
+        check('Username', 'Username is required').isLength({min: 5}),
+        check('Username', 'Username contains non alphanumeric characters - not allowed').isAlphanumeric(),
+        check('Password', 'Password is required').not().isEmpty(),
+        check('Email', 'Email does not appear to be valid').isEmail()
+    ], async (req, res) => {
     let hashedPassword = Users.hashPassword(req.body.Password);
     console.log('Received request body:', req.body);
     await Users.findOne({ Username: req.body.Username })
