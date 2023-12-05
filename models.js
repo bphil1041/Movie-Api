@@ -1,6 +1,9 @@
 //Import mongoose
 const mongoose = require('mongoose');
 
+//Import bcrypt
+const bcrypt = require('bcrypt');
+
 //Define MongoDB schemas
 let movieSchema = mongoose.Schema({
     genre: {
