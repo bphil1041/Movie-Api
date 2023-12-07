@@ -230,7 +230,7 @@ app.get('/movies/director/:name', passport.authenticate('jwt', { session: false 
 });
 
 //Default endpoint that responds with a welcome message
-app.get('/', passport.authenticate('jwt', { session: false }), (req, res) => {
+app.get('/', (req, res) => {
     res.send('Welcome to myFlix!');
 });
 
