@@ -17,7 +17,7 @@ mongoose.connect( process.env.CONNECTION_URI, { useNewUrlParser: true, useUnifie
 
 
 const cors = require('cors');
-app.use(ros());
+app.use(cors());
 
 //Import auth
 let auth = require('./auth')(app);
