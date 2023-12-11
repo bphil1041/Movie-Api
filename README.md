@@ -24,6 +24,8 @@ Welcome to myFlix; the server side of a web app about movies. Users can register
 ## Link to Documentation
 https://myflixbp-ee7590ef397f.herokuapp.com/documentation.html
 
+![Screenshot 2023-12-11 at 2 32 52 PM](https://github.com/bphil1041/Movie-Api/assets/140545982/8a8c1aa7-bd09-4a4e-a4c0-3a694dd2ff40)
+
 
 
 
