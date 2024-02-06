@@ -100,17 +100,21 @@ app.get('/users', passport.authenticate('jwt', { session: false }), async (req, 
     });
 });
 
-//READ get a user by username
+// READ get a user by username
 app.get('/users/:Username', passport.authenticate('jwt', { session: false }), async (req, res) => {
-  await Users.findOne({ Username: req.params.Username })
-    .then((user) => {
+  try {
+    const user = await Users.findOne({ Username: req.params.Username });
+    if (user) {
       res.json(user);
-    })
-    .catch((err) => {
-      console.error(err);
-      res.status(500).send('Error: ' + err);
-    });
+    } else {
+      res.status(404).json({ message: 'User not found' });
+    }
+  } catch (err) {
+    console.error(err);
+    res.status(500).send('Error: ' + err);
+  }
 });
+
 
 //UPDATE user
 app.put('/users/:Username', passport.authenticate('jwt', { session: false }), async (req, res) => {
