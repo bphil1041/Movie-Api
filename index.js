@@ -1,3 +1,7 @@
+/**
+ * @fileoverview Main server file for the myFlix application.
+ */
+
 const express = require('express');
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
@@ -44,7 +48,13 @@ const passport = require('passport');
 require('./passport');
 
 // ENDPOINTS
-
+/**
+ * @swagger
+ * /users:
+ *   post:
+ *     summary: Register a new user
+ *     description: Register a new user in the system.
+ */
 //CREATE: add user
 app.post('/users',
   [
@@ -89,6 +99,13 @@ app.post('/users',
   });
 
 //READ data about users
+/**
+ * @swagger
+ * /users:
+ *   get:
+ *     summary: Get all users
+ *     description: Retrieve a list of all registered users.
+ */
 app.get('/users', passport.authenticate('jwt', { session: false }), async (req, res) => {
   await Users.find()
     .then((users) => {
@@ -101,6 +118,20 @@ app.get('/users', passport.authenticate('jwt', { session: false }), async (req, 
 });
 
 // READ get a user by username
+/**
+ * @swagger
+ * /users/{Username}:
+ *   get:
+ *     summary: Get a user by username
+ *     description: Retrieve a user by their username.
+ *     parameters:
+ *       - in: path
+ *         name: Username
+ *         required: true
+ *         schema:
+ *           type: string
+ *         description: The username of the user
+ */
 app.get('/users/:Username', passport.authenticate('jwt', { session: false }), async (req, res) => {
   try {
     const user = await Users.findOne({ Username: req.params.Username });
@@ -117,6 +148,20 @@ app.get('/users/:Username', passport.authenticate('jwt', { session: false }), as
 
 
 //UPDATE user
+/**
+ * @swagger
+ * /users/{Username}:
+ *   put:
+ *     summary: Update a user's information
+ *     description: Update a user's information by their username.
+ *     parameters:
+ *       - in: path
+ *         name: Username
+ *         required: true
+ *         schema:
+ *           type: string
+ *         description: The username of the user
+ */
 app.put('/users/:Username', passport.authenticate('jwt', { session: false }), async (req, res) => {
   if (req.user.Username !== req.params.Username) {
     return res.status(400).send('Permission denied');
@@ -142,6 +187,26 @@ app.put('/users/:Username', passport.authenticate('jwt', { session: false }), as
 });
 
 //CREATE favorite movie 
+/**
+ * @swagger
+ * /users/{Username}/movies/{MovieID}:
+ *   post:
+ *     summary: Add a movie to user's favorites
+ *     description: Add a movie to a user's list of favorite movies by movie ID.
+ *     parameters:
+ *       - in: path
+ *         name: Username
+ *         required: true
+ *         schema:
+ *           type: string
+ *         description: The username of the user
+ *       - in: path
+ *         name: MovieID
+ *         required: true
+ *         schema:
+ *           type: string
+ *         description: The ID of the movie
+ */
 app.post('/users/:Username/movies/:MovieID', passport.authenticate('jwt', { session: false }), async (req, res) => {
   await Users.findOneAndUpdate({ Username: req.params.Username }, {
     $push: { FavoriteMovies: req.params.MovieID }
@@ -158,6 +223,26 @@ app.post('/users/:Username/movies/:MovieID', passport.authenticate('jwt', { sess
 
 
 // DELETE favorite movie
+/**
+ * @swagger
+ * /users/{Username}/movies/{MovieID}:
+ *   delete:
+ *     summary: Remove a movie from user's favorites
+ *     description: Remove a movie from a user's list of favorite movies by movie ID.
+ *     parameters:
+ *       - in: path
+ *         name: Username
+ *         required: true
+ *         schema:
+ *           type: string
+ *         description: The username of the user
+ *       - in: path
+ *         name: MovieID
+ *         required: true
+ *         schema:
+ *           type: string
+ *         description: The ID of the movie
+ */
 app.delete('/users/:Username/movies/:MovieID', passport.authenticate('jwt', { session: false }), async (req, res) => {
   await Users.findOneAndUpdate(
     { Username: req.params.Username },
@@ -176,6 +261,20 @@ app.delete('/users/:Username/movies/:MovieID', passport.authenticate('jwt', { se
 
 
 //DELETE: allow existing user to deregister 
+/**
+ * @swagger
+ * /users/{Username}:
+ *   delete:
+ *     summary: Delete a user
+ *     description: Deregister an existing user by their username.
+ *     parameters:
+ *       - in: path
+ *         name: Username
+ *         required: true
+ *         schema:
+ *           type: string
+ *         description: The username of the user
+ */
 app.delete('/users/:Username', passport.authenticate('jwt', { session: false }), async (req, res) => {
   await Users.findOneAndDelete({ Username: req.params.Username })
     .then((user) => {
@@ -193,6 +292,13 @@ app.delete('/users/:Username', passport.authenticate('jwt', { session: false }),
 
 
 //READ: return list of all movies
+/**
+ * @swagger
+ * /movies:
+ *   get:
+ *     summary: Get all movies
+ *     description: Retrieve a list of all movies.
+ */
 app.get('/movies', passport.authenticate('jwt', { session: false }), async (req, res) => {
   await Movies.find()
     .then((movies) => {
@@ -205,6 +311,20 @@ app.get('/movies', passport.authenticate('jwt', { session: false }), async (req,
 });
 
 //READ: return single movie
+/**
+ * @swagger
+ * /movies/{title}:
+ *   get:
+ *     summary: Get a movie by title
+ *     description: Retrieve a movie by its title.
+ *     parameters:
+ *       - in: path
+ *         name: title
+ *         required: true
+ *         schema:
+ *           type: string
+ *         description: The title of the movie
+ */
 app.get('/movies/:title', passport.authenticate('jwt', { session: false }), (req, res) => {
   Movies.findOne({ title: req.params.title })
     .then((movie) => {
@@ -217,6 +337,20 @@ app.get('/movies/:title', passport.authenticate('jwt', { session: false }), (req
 });
 
 // READ: return genre
+/**
+ * @swagger
+ * /movies/genre/{genreName}:
+ *   get:
+ *     summary: Get movies by genre
+ *     description: Retrieve movies by genre name.
+ *     parameters:
+ *       - in: path
+ *         name: genreName
+ *         required: true
+ *         schema:
+ *           type: string
+ *         description: The name of the genre
+ */
 app.get('/movies/genre/:genreName', passport.authenticate('jwt', { session: false }), (req, res) => {
   const { genreName } = req.params;
 
@@ -231,6 +365,20 @@ app.get('/movies/genre/:genreName', passport.authenticate('jwt', { session: fals
 });
 
 // READ: return director
+/**
+ * @swagger
+ * /movies/director/{name}:
+ *   get:
+ *     summary: Get movies by director
+ *     description: Retrieve movies by director name.
+ *     parameters:
+ *       - in: path
+ *         name: name
+ *         required: true
+ *         schema:
+ *           type: string
+ *         description: The name of the director
+ */
 app.get('/movies/director/:name', passport.authenticate('jwt', { session: false }), (req, res) => {
   const { name } = req.params;
 
@@ -245,6 +393,14 @@ app.get('/movies/director/:name', passport.authenticate('jwt', { session: false 
 });
 
 //Default endpoint that responds with a welcome message
+/**
+ * @swagger
+ * /:
+ *   get:
+ *     summary: Welcome message
+ *     description: Returns a welcome message.
+ */
+
 app.get('/', (req, res) => {
   res.send('Welcome to myFlix!');
 });
@@ -252,7 +408,14 @@ app.get('/', (req, res) => {
 //Middleware to serve static files from "public" directory
 app.use(express.static('public'));
 
-//Error-handling middleware
+/**
+ * Error-handling middleware
+ * @param {Object} err - Error object.
+ * @param {Object} req - Request object.
+ * @param {Object} res - Response object.
+ * @param {Function} next - Next middleware function.
+ */
+
 app.use((err, req, res, next) => {
   console.error(err.stack);
   res.status(500).send('Something broke!');
